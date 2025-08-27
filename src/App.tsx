@@ -7,6 +7,7 @@ import Products from './pages/Products'
 import ProductDetails from './pages/ProductDetails'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import GoTop from './components/ui/GoTop'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route path='/productDetails' element={<ProductDetails />} />
           </Routes>
         </div>
+        <GoTop/>
         <Footer />
       </main>
     </>

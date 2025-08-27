@@ -1,18 +1,50 @@
+// export default function Footer() {
+//   return (
+//     <section className="bg-[#f5f5f5] text-[#1e1e1e] p-4">
+//       <div className="container mx-auto bg-amber-400">
+//         <div className="grid md:grid-cols-3 lg:grid-cols-3">
+//           <div>
+//             <dl>
+//               <dt className="text-sm font-semibold my-4">INFO</dt>
+//               <dd>PRICING</dd>
+//               <dd>ABOUT</dd>
+//               <dd>CONTACTS</dd>
+//             </dl>
+//           </div>
+//           <div>
+//             <dl>
+//               <dt className="text-sm font-semibold my-4">LANGUAGE</dt>
+//               <dd>ENG</dd>
+//               <dd>ESP</dd>
+//               <dd>SVE</dd>
+//             </dl>
+//           </div>
+//           <div>
+//             <dl>
+//               <dt className="text-sm font-semibold my-4">LANGUAGE</dt>
+//               <dd>ENG</dd>
+//               <dd>ESP</dd>
+//               <dd>SVE</dd>
+//             </dl>
+//           </div>
+//         </div>
+//       </div>
+//       <div className="text-sm flex justify-center items-center"> <p>&copy; axcelDesigns</p><p className="ml-10">Privacy</p></div>
+//     </section>
+//   )
+// }
+
 
 import { Link } from "react-router-dom";
-// import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
-// import Button from "./ui/Button";
-// import Input from "./ui/Input";
 
 export default function Footer() {
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter signup
     alert("Thank you for subscribing to our newsletter!");
   };
 
   return (
-    <footer className="bg-muted/30 border-t">
+    <footer className="bg-muted/3 bg-[#f5f5f5] text-[#1e1e1e]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-8 md:py-12">
