@@ -8,6 +8,8 @@ import ProductDetails from './pages/ProductDetails'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import GoTop from './components/ui/GoTop'
+import Cart from './pages/Cart'
+import Wishlist from './pages/Wishlist'
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path='/about' element={<About />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/wishlist' element={<Wishlist />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/products' element={<Products />} />
             <Route path='/productDetails' element={<ProductDetails />} />

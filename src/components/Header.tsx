@@ -14,12 +14,14 @@ const navLinks: NavLinkProps[] = [
 ]
 
 export default function Header() {
+
   return (
     <header className="max-md:p-2 p-4">
       <div className="flex flex-row justify-between items-center ">
         <nav className="hidden sm:flex flex-row gap-4">
           {navLinks.map((link) => (
-            <NavLink key={link.path} to={link.path} > {link.label}</NavLink>
+            <NavLink key={link.path} to={link.path} className={({ isActive }) => (
+              isActive ? "font-bold" : "")}> {link.label}</NavLink>
           ))}
         </nav>
         <div className="sm:hidden">
@@ -29,12 +31,17 @@ export default function Header() {
           <img src={logo} alt="" />
         </div>
         <div className="flex flex-row gap-2">
-          <i className=" fa-regular fa-heart"></i>
-          <i className=" fa-solid fa-cart-shopping"></i>
-          <i className=" fa-solid fa-user"></i>
+          <NavLink to='/wishlist' className="rounded-full w-8 h-8 flex justify-center items-center bg-black text-white">
+            <i className=" fa-regular fa-heart"></i>
+          </NavLink>
+          <NavLink to='/cart' className="border-2 rounded-full w-8 h-8 flex justify-center items-center">
+            <i className=" fa-solid fa-cart-shopping"></i>
+          </NavLink>
+          <NavLink to='/user' className="rounded-full w-8 h-8 flex justify-center items-center bg-black text-white">
+            <i className=" fa-regular fa-user"></i>
+          </NavLink>
         </div>
       </div>
-      <div></div>
     </header>
   )
 }
