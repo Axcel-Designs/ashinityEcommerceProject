@@ -25,5 +25,5 @@ export default function Input({ type, holder, name, id, value, change, label }: 
         className="grow outline-none bg-amber-200 placeholder-gray-400"
       />
     </div>
-  );
+  )
 }

@@ -1,11 +1,10 @@
 import { NavLink } from "react-router-dom"
 import logo from '../../public/logo.svg'
-
+import useActive from "../hooks/useActive"
 interface NavLinkProps {
   label: string
   path: string
 }
-
 
 const navLinks: NavLinkProps[] = [
   { label: 'Home', path: '/' },
@@ -15,8 +14,10 @@ const navLinks: NavLinkProps[] = [
 
 export default function Header() {
 
+  const { isActive, toggleActive } = useActive()
+
   return (
-    <header className="max-md:p-2 p-4">
+    <header className="max-md:p-2 p-4 mt-4">
       <div className="flex flex-row justify-between items-center ">
         <nav className="hidden sm:flex flex-row gap-4">
           {navLinks.map((link) => (
@@ -24,10 +25,10 @@ export default function Header() {
               isActive ? "font-bold" : "")}> {link.label}</NavLink>
           ))}
         </nav>
-        <div className="sm:hidden">
-          <i className=" fa-solid fa-bars fa-xl"></i>
+        <div className="sm:hidden cursor-pointer" onClick={toggleActive}>
+          <i className={`fa-solid fa-xl  ${isActive ?'fa-times': 'fa-bars'} `}></i>
         </div>
-        <div className="w-10">
+        <div className="w-8">
           <img src={logo} alt="" />
         </div>
         <div className="flex flex-row gap-2">
@@ -42,6 +43,13 @@ export default function Header() {
           </NavLink>
         </div>
       </div>
+      {isActive &&
+      <nav className="flex flex-col gap-4 pt-4 sm:hidden">
+        {navLinks.map((link) => (
+          <NavLink key={link.path} to={link.path} className={({ isActive }) => (
+            isActive ? "font-bold" : "")} onClick={toggleActive}> {link.label}</NavLink>
+        ))}
+      </nav>}
     </header>
   )
 }

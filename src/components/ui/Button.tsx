@@ -4,7 +4,6 @@ interface ButtonProps {
   click: () => void;
 }
 
-
 export default function Button({ label, type, click }:ButtonProps) {
   return (
     <div>
