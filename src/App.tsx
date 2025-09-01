@@ -1,8 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
+import Checkout from './pages/Checkout'
 import Products from './pages/Products'
 import ProductDetails from './pages/ProductDetails'
 import Header from './components/Header'
@@ -15,17 +14,16 @@ function App() {
 
   return (
     <>
-      <main className='flex flex-col min-h-screen justify-between'>
+      <main className='flex flex-col min-h-screen justify-between bg-[#f5f5f5]'>
         <Header />
         <div className='container mx-auto px-4 grow'>
           <Routes>
             <Route index element={<Home />} />
-            <Route path='/about' element={<About />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/checkout' element={<Checkout />} />
             <Route path='/wishlist' element={<Wishlist />} />
-            <Route path='/contact' element={<Contact />} />
             <Route path='/products' element={<Products />} />
-            <Route path='/productDetails' element={<ProductDetails />} />
+            <Route path={`/productDetails/:id`} element={<ProductDetails />} />
           </Routes>
         </div>
         <GoTop/>

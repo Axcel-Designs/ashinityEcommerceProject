@@ -1,4 +1,11 @@
-// export default function Footer() {
+import { Link } from "react-router-dom";
+
+export default function Footer() {
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Thank you for subscribing to our newsletter!");
+  };
+
 //   return (
 //     <section className="bg-[#f5f5f5] text-[#1e1e1e] p-4">
 //       <div className="container mx-auto bg-amber-400">
@@ -34,17 +41,8 @@
 //   )
 // }
 
-
-import { Link } from "react-router-dom";
-
-export default function Footer() {
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Thank you for subscribing to our newsletter!");
-  };
-
   return (
-    <footer className="bg-muted/3 bg-[#f5f5f5] text-[#1e1e1e]">
+    <footer className=" bg-[#EAEAEA] text-[#1e1e1e]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-8 md:py-12">
@@ -52,7 +50,7 @@ export default function Footer() {
             {/* Company Info */}
             <div className="space-y-4 sm:col-span-2 lg:col-span-1">
               <h3 className="font-bold text-lg">TechStore</h3>
-              <p className="text-sm text-muted-foreground pr-0 sm:pr-4 lg:pr-0">
+              <p className="text-sm  pr-0 sm:pr-4 lg:pr-0">
                 Your trusted destination for the latest technology products.
                 Quality, innovation, and customer satisfaction are our priorities.
               </p>

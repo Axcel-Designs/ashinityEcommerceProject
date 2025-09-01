@@ -1,12 +1,9 @@
 import { NavLink } from "react-router-dom"
 import logo from '../../public/logo.svg'
 import useActive from "../hooks/useActive"
-interface NavLinkProps {
-  label: string
-  path: string
-}
+import type NavProps from '../types/headertype'
 
-const navLinks: NavLinkProps[] = [
+const navLinks: NavProps[] = [
   { label: 'Home', path: '/' },
   { label: 'Collections', path: '/collections' },
   { label: 'New', path: '/new' },

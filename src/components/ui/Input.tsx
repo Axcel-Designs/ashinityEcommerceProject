@@ -3,16 +3,17 @@ import React from "react";
 interface InputProps {
   type: React.HTMLInputTypeAttribute;
   holder: string;
-  name: string;
+  name?: string;
   id?: string;
-  value: string | number;
-  change: React.ChangeEventHandler<HTMLInputElement>;
-  label: string;
+  value?: string | number;
+  change?: React.ChangeEventHandler<HTMLInputElement>;
+  label?: string;
 }
 
 export default function Input({ type, holder, name, id, value, change, label }: InputProps) {
   return (
-    <div className="ring-2 rounded-sm py-1 px-2 flex gap-4">
+    <div className="py-1 px-2 flex gap-4 bg-[#eaeaea] items-center">
+      <i className="fa-solid fa-magnifying-glass text-gray-400"></i>
       <label htmlFor={name}>{label}</label>
       <input
         type={type}
@@ -22,7 +23,7 @@ export default function Input({ type, holder, name, id, value, change, label }: 
         value={value}
         onChange={change}
         required
-        className="grow outline-none bg-amber-200 placeholder-gray-400"
+        className="grow outline-none placeholder-gray-600"
       />
     </div>
   )
