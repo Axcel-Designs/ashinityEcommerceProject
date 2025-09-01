@@ -2,6 +2,7 @@ import { useParams, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import type { Product, ProductDetails } from "../types/products";
+import Button from "../components/ui/Button";
 
 const size: Partial<ProductDetails>[] = [
   { sz: "XS" },
@@ -55,13 +56,8 @@ export default function ProductDetails() {
     <>
       <section className="my-4 p-4 flex flex-col ">
         <div className="flex justify-between items-center mb-2">
-          <div>
-            <h2>Post</h2>
-          </div>
           <NavLink to={"/"}>
-            <button className="border-2 py-1 px-4 hover:bg-gray-300">
-              Go Back
-            </button>
+            <i className="fa-solid fa-arrow-left-long"></i>
           </NavLink>
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-5 gap-3 items-center w-fit place-self-center my-8 p-8">
@@ -111,9 +107,11 @@ export default function ProductDetails() {
                     ))}
                   </ul>
                 </div>
-                <p>FIND YOUR SIZE | MEASUREMENT GUIDE</p>
+                <div className="my-4">
+                  <p>FIND YOUR SIZE | MEASUREMENT GUIDE</p>
+                </div>
+                <Button label="ADD" />
               </div>
-
             </>
           )}
         </div>

@@ -1,7 +1,7 @@
 interface ButtonProps {
   label: string;
-  type: 'button' | 'submit' | 'reset';
-  click: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  click?: () => void;
 }
 
 export default function Button({ label, type, click }:ButtonProps) {
@@ -9,7 +9,7 @@ export default function Button({ label, type, click }:ButtonProps) {
     <div>
       <button
         onClick={click}
-        className={`ring ring-blue-800 py-1 px-4 rounded-lg shadow-sm shadow-blue-300  bg-blue-800 text-white`}
+        className={` py-2 px-4 w-full bg-gray-400 text-black`}
         type={type}
       >
         <h4>{label}</h4>
