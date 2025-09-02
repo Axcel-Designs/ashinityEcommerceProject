@@ -17,11 +17,11 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
   const [err, setErr] = useState<string>('');
   const [search, setSearch] = useState('');
+  // const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchPosts() {
       try {
-        // const response = await fetch('https://dummyjson.com/products');
         const response = await fetch("https://api.escuelajs.co/api/v1/products/");
         const data: Product[] = await response.json();
         setPosts(data);
@@ -55,7 +55,8 @@ export default function Home() {
           holder='search for products'
           type="text"
           value={search}
-          change={(e) => setSearch(e.target.value)} />
+          change={(e) => setSearch(e.target.value)}
+          />
       </div>
       <div className="flex flex-wrap justify-around my-4">
         <div className=" max-sm:w-full flex flex-col justify-between">
