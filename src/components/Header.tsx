@@ -5,7 +5,7 @@ import type NavProps from '../types/headertype'
 
 const navLinks: NavProps[] = [
   { label: 'Home', path: '/' },
-  { label: 'Collections', path: '/collections' },
+  { label: 'Collections', path: '/products' },
   { label: 'New', path: '/new' },
 ]
 
